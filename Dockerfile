@@ -20,9 +20,9 @@ COPY package.json /usr/src/node-red/
 COPY settings.js /data
 RUN npm install \
     && npm install node-red-dashboard \
-                && node-red-contrib-fft \
-                && node-red-contrib-binary \
-                && node-red-contrib-aws 
+    && npm install node-red-contrib-fft \
+    && npm install node-red-contrib-binary \
+    && npm install node-red-contrib-aws 
 
 # User configuration directory volume
 #VOLUME ["/data"]
