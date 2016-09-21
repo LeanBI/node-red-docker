@@ -17,11 +17,15 @@ USER node-red
 
 # package.json contains Node-RED NPM module and node dependencies
 COPY package.json /usr/src/node-red/
-RUN npm install && npm install node-red-dashboard
+RUN npm install \
+    && npm install node-red-dashboard \
+                && node-red-contrib-fft \
+                && node-red-contrib-binary \
+                && node-red-contrib-aws 
 
 # User configuration directory volume
 #VOLUME ["/data"]
-VOLUME ["/usr/src/node-red/node_modules/node-red-dashboard"]
+#VOLUME ["/usr/src/node-red/node_modules/node-red-dashboard"]
 EXPOSE 1880
 
 # Environment variable holding file path for flows configuration
