@@ -17,6 +17,7 @@ USER node-red
 
 # package.json contains Node-RED NPM module and node dependencies
 COPY package.json /usr/src/node-red/
+COPY settings.js /data
 RUN npm install \
     && npm install node-red-dashboard \
                 && node-red-contrib-fft \
