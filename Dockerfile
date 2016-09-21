@@ -21,6 +21,7 @@ RUN npm install && npm install node-red-dashboard
 
 # User configuration directory volume
 #VOLUME ["/data"]
+VOLUME ["/usr/src/node-red/node_modules/node-red-dashboard"]
 EXPOSE 1880
 
 # Environment variable holding file path for flows configuration
